@@ -1,5 +1,9 @@
 let puntos = 25;
 let nombre = prompt("Indica cual es tu nombre.");
+
+const opciones = ["-7; -6; -5; -9" , "-Palermo; -Tevez; -Riquelme; -Benedetto" , "-Schelotto; -Bianchi; -Russo; -Falcioni", "-41; -45; -47; -46"];
+
+
 function Correcto() {
     alert(`Correcto, sumas otros ${puntos} puntos`);
 }
@@ -9,12 +13,12 @@ alert(`Vamos con la primera pregunta`);
 
 
 /* Pregunta 1 */
-let pregunta1 = prompt("¿Cuántas copas libertadores tiene el Club Atletico Boca Juniors? Opciones: -7; -6; -5; -9");
+let pregunta1 = prompt("¿Cuántas copas libertadores tiene el Club Atletico Boca Juniors? Opciones: " + (opciones[0]));
 let rtaCorrecta1;
 
 while (pregunta1 != "6" && pregunta1 != "7" && pregunta1 != "5" && pregunta1 != "9"){
     alert(`${pregunta1} no es una respuesta valida.`);
-    pregunta1 = prompt("¿Cuántas copas libertadores tiene el Club Atletico Boca Juniors? Opciones: -7; -6; -5; -9");
+    pregunta1 = prompt("¿Cuántas copas libertadores tiene el Club Atletico Boca Juniors? Opciones: " + (opciones[0]));
 }
 
 switch (pregunta1) {
@@ -38,12 +42,12 @@ switch (pregunta1) {
 
 
 /* Pregunta 2 */
-let pregunta2 = prompt("¿Quién fue el maximo goleador de BOCA JUNIORS? Opciones: -Palermo; -Tevez; -Riquelme; -Benedetto ");
+let pregunta2 = prompt("¿Quién fue el maximo goleador de BOCA JUNIORS? Opciones: " + (opciones[1]));
 let rtaCorrecta2;
 
 while (pregunta2.toLowerCase() != "palermo" && pregunta2.toLowerCase() != "tevez" && pregunta2.toLowerCase() != "riquelme" && pregunta2.toLowerCase() != "benedetto"){
     alert(`${pregunta2} no es una respuesta valida.`);
-    pregunta2 = prompt("¿Quién fue el maximo goleador de BOCA JUNIORS? Opciones: -Palermo; -Tevez; -Riquelme; -Benedetto ");
+    pregunta2 = prompt("¿Quién fue el maximo goleador de BOCA JUNIORS? Opciones: " + (opciones[1]));
 }
 
 switch (pregunta2.toLowerCase()){
@@ -67,12 +71,12 @@ switch (pregunta2.toLowerCase()){
 
 
 /* Pregunta 3 */
-let pregunta3 = prompt("¿Qué entrenador ganó mas en Boca Juniors? Opciones: -Schelotto; -Bianchi; -Russo; -Falcioni");
+let pregunta3 = prompt("¿Qué entrenador ganó mas en Boca Juniors? Opciones: " + (opciones[2]));
 let rtaCorrecta3;
 
 while (pregunta3.toLowerCase() != "schelotto" && pregunta3.toLowerCase() != "bianchi" && pregunta3.toLowerCase() != "russo" && pregunta3.toLowerCase() != "falcioni"){
     alert(`${pregunta3} no es una respuesta valida.`);
-    pregunta3 = prompt("¿Qué entrenador ganó mas en Boca Juniors? Opciones: -Schelotto; -Bianchi; -Russo; -Falcioni");
+    pregunta3 = prompt("¿Qué entrenador ganó mas en Boca Juniors? Opciones: " + + (opciones[2]));
 }
 
 switch (pregunta3.toLowerCase()) {
@@ -96,12 +100,12 @@ switch (pregunta3.toLowerCase()) {
 
 
 /* Pregunta 4 */
-let pregunta4 = prompt("¿Cuántos partidos le gano boca a river? Opciones: -41; -45; -47; -46");
+let pregunta4 = prompt("¿Cuántos partidos le gano boca a river? Opciones: " + (opciones[3]));
 let rtaCorrecta4;
 
 while (pregunta4 != "41" && pregunta4 != "45" && pregunta4 != "47" && pregunta4 != "46"){
     alert(`${pregunta4} no es una respuesta valida.`);
-    pregunta4 = prompt("¿Cuántos partidos le gano boca a river? Opciones: -41; -45; -47; -46");
+    pregunta4 = prompt("¿Cuántos partidos le gano boca a river? Opciones: " + (opciones[3]));
 }
 
 switch (pregunta4){
@@ -125,7 +129,7 @@ switch (pregunta4){
 
 resultado = rtaCorrecta1 + rtaCorrecta2 + rtaCorrecta3 + rtaCorrecta4;
 
-alert("Su cantidad de puntos fue de " + resultado);
+alert("Su cantidad de puntos fue de " + resultado + "puntos");
 
 if (resultado >= 75){
     alert("Sos un verdadero HINCHA DE BOCA");
