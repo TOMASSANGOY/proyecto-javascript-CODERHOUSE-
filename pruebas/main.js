@@ -24,7 +24,6 @@ class Pregunta{
 }
 
 //Ingreso de datos por archivo JSON
-
 fetch('./pruebas/preguntas.json')
     .then( (resp) => resp.json() )
     .then( (data) =>    {
@@ -38,7 +37,6 @@ fetch('./pruebas/preguntas.json')
 
 
 //FUNCIONES
-
 function guardarJugador (nombre, puntos) {
     Jugador.push(new Persona(nombre, puntos))
 }
@@ -165,7 +163,6 @@ function limpiar_resultados () {
         botonLimpiar.style.display = "none"
     }
 }
-
 
 // Monitoreo de Eventos DOM
 let botonJugar = document.getElementById("jugar")
