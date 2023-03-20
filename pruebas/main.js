@@ -1,34 +1,10 @@
 //VARIABLES
-
 let mensaje = "";
 let puntaje = 0;
 let npregunta = 0;
 let Jugador = [];
 let nombre = ""
-
-let preguntas = [
-
-    {
-        texto:      "¿Cuántas copas libertadores tiene el Club Atletico Boca Juniors?”?",
-        opciones:   ["7","6","5","9"],
-        respuesta:  2
-    },
-    {
-        texto:      "¿Quién fue el maximo goleador de BOCA JUNIORS?",
-        opciones:   ["PALERMO", "TEVEZ", "RIQUELME", "BENEDETTO"],
-        respuesta:  1
-    },
-    {
-        texto:      "¿Qué entrenador ganó mas en Boca Juniors?",
-        opciones:   ["SCHELOTTO", "RUSSO", "FALCIONI", "BIANCHI"],
-        respuesta:  4
-    },
-    {
-        texto:      "¿Cuántos partidos le gano boca a river?",
-        opciones:   ["41", "45", "46", "47"],
-        respuesta:  3
-    },
-]
+let preguntas = []
 
 
 //CONSTRUCTORES
@@ -47,6 +23,19 @@ class Pregunta{
     }
 }
 
+//Ingreso de datos por archivo JSON
+
+fetch('./pruebas/preguntas.json')
+    .then( (resp) => resp.json() )
+    .then( (data) =>    {
+                            data.forEach( (lista) => {
+                                cargarPregunta(lista.texto, lista.opciones, lista.respuesta)
+                            }
+                            )
+                        }
+    )
+    .catch( (error) => { console.error(error); console.log("Validar carga archivo JSON") } )
+
 
 //FUNCIONES
 
@@ -55,8 +44,9 @@ function guardarJugador (nombre, puntos) {
 }
 
 
-function nuevaPregunta (texto, opciones, respuesta) {
-    preguntas.push(new Pregunta(texto, opciones, respuesta))
+function cargarPregunta (texto, opciones, respuesta) {
+    const nuevaPregunta = new Pregunta(texto, opciones, respuesta)
+    preguntas.push(nuevaPregunta)
 }
 
 let botonLimpiar = document.getElementById("borrar");
@@ -104,7 +94,6 @@ function jugar(n) {
     }
     )
 }
-
 
 function boton_validar() {
 
@@ -195,7 +184,25 @@ formulario.addEventListener("submit", (e) => {
     // probar usar arriba .includes en lugar de forEach
     if ( respuesta + 1 == preguntas[npregunta].respuesta ) {
         puntaje++;
-    }
+
+    // Uso de la librería Toastify para notificar una opción correcta.
+    Toastify({
+        text: "¡Correcto!",
+        duration: 3000,
+        gravity: 'top',
+        position: 'right',
+        style: { background: "green" }
+    }).showToast();
+}else {
+    Toastify({
+        text: "¡Incorrecto!",
+        duration: 2000,
+        gravity: 'top',
+        position: 'right',
+        style: { background: "red" }
+    }).showToast();
+    
+}
     boton_validar();
 }
 )

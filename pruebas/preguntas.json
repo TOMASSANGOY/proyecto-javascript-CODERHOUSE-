@@ -1,0 +1,23 @@
+[
+
+    {
+        "texto":      "¿Cuántas copas libertadores tiene el Club Atletico Boca Juniors?”?",
+        "opciones":   ["7","6","5","9"],
+        "respuesta":  2
+    },
+    {
+        "texto":      "¿Quién fue el maximo goleador de BOCA JUNIORS?",
+        "opciones":   ["PALERMO", "TEVEZ", "RIQUELME", "BENEDETTO"],
+        "respuesta":  1
+    },
+    {
+        "texto":      "¿Qué entrenador ganó mas en Boca Juniors?",
+        "opciones":   ["SCHELOTTO", "RUSSO", "FALCIONI", "BIANCHI"],
+        "respuesta":  4
+    },
+    {
+        "texto":      "¿Cuántos partidos le gano boca a river?",
+        "opciones":   ["41", "45", "46", "47"],
+        "respuesta":  3
+    }
+]
